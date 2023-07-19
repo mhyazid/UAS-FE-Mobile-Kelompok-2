@@ -1,0 +1,32 @@
+Terdapat code warna custom yang harus di pasang apabila ingin melakukan flutter run, copy code di bawah ke color.dart pada 
+C:\src\flutter\packages\flutter\lib\src\material
+
+copy kan code berikut di dalam class Colors:
+
+static const MaterialColor trashure =
+      MaterialColor(_trashurePrimaryValue, <int, Color>{
+    50: Color(0xFFE5EAF8),
+    100: Color(0xFFBECAEC),
+    200: Color(0xFF93A7E0),
+    300: Color(0xFF6884D4),
+    400: Color(0xFF4769CA),
+    500: Color(_trashurePrimaryValue),
+    600: Color(0xFF2348BB),
+    700: Color(0xFF1D3FB3),
+    800: Color(0xFF1736AB),
+    900: Color(0xFF0E269E),
+  });
+  static const int _trashurePrimaryValue = 0xFF274FC1;
+
+  static const MaterialColor trashureAccent =
+      MaterialColor(_trashureAccentValue, <int, Color>{
+    100: Color(0xFFCDD4FF),
+    200: Color(_trashureAccentValue),
+    400: Color(0xFF677BFF),
+    700: Color(0xFF4D65FF),
+  });
+  static const int _trashureAccentValue = 0xFF9AA7FF;
+
+
+
+
