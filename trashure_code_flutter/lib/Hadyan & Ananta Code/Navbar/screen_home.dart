@@ -231,13 +231,15 @@ class _ScreenHomeState extends State<ScreenHome> {
                 ],
               ))
             : screens[currentIndex],
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            _showFeatureExplanationDialog(context);
-          },
-          tooltip: 'Tentang Fitur Aplikasi',
-          child: Icon(Icons.help_outline),
-        ),
+        floatingActionButton: currentIndex == 2
+            ? FloatingActionButton(
+                onPressed: () {
+                  _showFeatureExplanationDialog(context);
+                },
+                tooltip: 'Tentang Fitur Aplikasi',
+                child: Icon(Icons.help_outline),
+              )
+            : null,
         bottomNavigationBar: BottomNavigationBar(
           //backgroundColor: Colors.amber,
           selectedItemColor: Color.fromRGBO(153, 235, 0, 1),
