@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_application_2/Navbar/screen_home.dart';
 import 'package:trashure_code_flutter/Hadyan%20&%20Ananta%20Code/Navbar/screen_home.dart';
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
 
 class ScreenTfc extends StatefulWidget {
   const ScreenTfc({super.key});
@@ -10,6 +12,62 @@ class ScreenTfc extends StatefulWidget {
 }
 
 class _ScreenTfcState extends State<ScreenTfc> {
+  PickedFile? selectedImage;
+
+  Future<void> _getFromGallery() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        selectedImage = pickedFile;
+      });
+    }
+  }
+
+  Future<void> _takePhoto() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.getImage(source: ImageSource.camera);
+    if (pickedFile != null) {
+      setState(() {
+        selectedImage = pickedFile;
+      });
+    }
+  }
+
+  void _showBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 140,
+          child: Column(
+            children: [
+              ListTile(
+                leading: Icon(Icons.camera),
+                title: Text('Gunakan Kamera'),
+                onTap: () {
+                  _takePhoto();
+                  Navigator.pop(context, 'Pilihan 1');
+                },
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              ListTile(
+                leading: Icon(Icons.photo),
+                title: Text('Pilih dari Gallery'),
+                onTap: () {
+                  _getFromGallery();
+                  Navigator.pop(context, 'Pilihan 2');
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,12 +156,21 @@ class _ScreenTfcState extends State<ScreenTfc> {
           SizedBox(
             height: 15,
           ),
-          IconButton(
-            iconSize: 120,
-            onPressed: () {},
-            icon: Image.asset(
-              "assets/images/image 14.png",
-            ),
+          Container(
+            child: selectedImage == null
+                ? IconButton(
+                    iconSize: 100,
+                    onPressed: () {
+                      _showBottomSheet(context);
+                    },
+                    icon: Image.asset(
+                      "assets/images/image 14.png",
+                    ),
+                  )
+                : Container(
+                    height: 250,
+                    child: Image.file(File(selectedImage!.path)),
+                  ),
           ),
           SizedBox(
             height: 24,

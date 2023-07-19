@@ -45,7 +45,7 @@ class _Login_Sign_PartnerState extends State<Login_Sign_Partner> {
                         child: Text(
                           "Login",
                           style: TextStyle(
-                              color: Color.fromRGBO(153, 235, 60, 100),
+                              color: Colors.lightGreen,
                               decoration: status == "login"
                                   ? TextDecoration.underline
                                   : null,
@@ -61,7 +61,7 @@ class _Login_Sign_PartnerState extends State<Login_Sign_Partner> {
                         child: Text(
                           "Register",
                           style: TextStyle(
-                              color: Color.fromRGBO(153, 235, 60, 100),
+                              color: Colors.lightGreen,
                               decoration: status == "sign-up"
                                   ? TextDecoration.underline
                                   : null,

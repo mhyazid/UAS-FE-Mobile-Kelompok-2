@@ -63,7 +63,7 @@ class _Login_SignState extends State<Login_Sign> {
                         child: Text(
                           "Login",
                           style: TextStyle(
-                              color: Color.fromRGBO(153, 235, 60, 100),
+                              color: Colors.lightGreen,
                               decoration: status == "login"
                                   ? TextDecoration.underline
                                   : null,
@@ -79,7 +79,7 @@ class _Login_SignState extends State<Login_Sign> {
                         child: Text(
                           "Sign-Up",
                           style: TextStyle(
-                              color: Color.fromRGBO(153, 235, 60, 100),
+                              color: Colors.lightGreen,
                               decoration: status == "sign-up"
                                   ? TextDecoration.underline
                                   : null,

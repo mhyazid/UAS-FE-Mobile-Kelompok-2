@@ -13,7 +13,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Text("test"),
+        ),
         body: Center(
             child: Column(
           children: [
@@ -109,6 +111,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CircleAvatar(
+                            radius: 60,
+                            backgroundColor: const Color(0xFF778899),
                             child: Image.asset("assets/images/Group 19.png")),
                         // Text("Welcome, Guest!"),
                         Text("Welcome, Guest!")

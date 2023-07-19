@@ -22,22 +22,19 @@ class _Login_Partner_FormState extends State<Login_Partner> {
               border: Border(bottom: BorderSide(color: Colors.white))),
           width: 320,
           child: Row(children: [
-            Icon(Icons.mail_outline_rounded,
-                color: Color.fromRGBO(254, 253, 251, 100)),
+            Icon(Icons.mail_outline_rounded, color: Colors.white),
             SizedBox(
               width: 10,
             ),
             Expanded(
                 child: TextField(
               style: TextStyle(
-                  fontSize: 20,
-                  color: Color.fromRGBO(254, 253, 251, 100),
-                  decorationThickness: 0),
+                  fontSize: 20, color: Colors.white, decorationThickness: 0),
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: "Email Address",
                   hintStyle: TextStyle(
-                    color: Color.fromRGBO(254, 253, 251, 100),
+                    color: Colors.white,
                   )),
             ))
           ]),
@@ -47,7 +44,7 @@ class _Login_Partner_FormState extends State<Login_Partner> {
               border: Border(bottom: BorderSide(color: Colors.white))),
           width: 320,
           child: Row(children: [
-            Icon(Icons.lock_outline, color: Color.fromRGBO(254, 253, 251, 100)),
+            Icon(Icons.lock_outline, color: Colors.white),
             SizedBox(
               width: 10,
             ),
@@ -55,19 +52,17 @@ class _Login_Partner_FormState extends State<Login_Partner> {
                 child: TextField(
               obscureText: true,
               style: TextStyle(
-                  fontSize: 20,
-                  color: Color.fromRGBO(254, 253, 251, 100),
-                  decorationThickness: 0),
+                  fontSize: 20, color: Colors.white, decorationThickness: 0),
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: "Password",
                   hintStyle: TextStyle(
-                    color: Color.fromRGBO(254, 253, 251, 100),
+                    color: Colors.white,
                   )),
             )),
             Icon(
               Icons.visibility,
-              color: Color.fromRGBO(254, 253, 251, 100),
+              color: Colors.white,
             )
           ]),
         ),
@@ -87,12 +82,12 @@ class _Login_Partner_FormState extends State<Login_Partner> {
             ),
             Text(
               'Remember Password',
-              style: TextStyle(color: Colors.grey),
+              style: TextStyle(color: Colors.white),
             ),
             Expanded(child: Container()),
             Text(
               "Forgot Password",
-              style: TextStyle(color: Colors.blueAccent),
+              style: TextStyle(color: Colors.lightGreen),
             )
           ]),
         ),
@@ -105,7 +100,7 @@ class _Login_Partner_FormState extends State<Login_Partner> {
                   textStyle: TextStyle(fontSize: 25),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20))),
-                  backgroundColor: (const Color.fromRGBO(254, 253, 251, 100))),
+                  backgroundColor: (Colors.white)),
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) {
